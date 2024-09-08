@@ -47,30 +47,35 @@ function Weather() {
   }
 
   function searchWeather() {
-    FetchWeatherData(inputValue).then((data) => {
-      console.log(data);
-      setWeatherData({
-        humidity: data.main.humidity,
-        windSpeed: data.wind.speed,
-        temperature: Math.floor(data.main.temp),
-        location: data.name,
-        icon: data.weather[0].icon,
+    if(inputValue === "") {
+      alert("Enter a city");
+    }
+    else {
+      FetchWeatherData(inputValue).then((data) => {
+        console.log(data);
+        setWeatherData({
+          humidity: data.main.humidity,
+          windSpeed: data.wind.speed,
+          temperature: Math.floor(data.main.temp),
+          location: data.name,
+          icon: data.weather[0].icon,
+        });
       });
-    });
+    }
     console.log("inputValue = ", inputValue);
     setInputValue("");
   }
 
   return (
     <>
-      <div className="flex flex-col p-10 bg-purple-500 shadow-xl rounded-xl">
+      <div className="flex flex-col p-10 shadow-xl bg-gradient-to-t from-blue-600 to-sky-500 rounded-xl">
         <div className="flex ">
           <input
-            className="px-4 py-2 mr-3 rounded-full"
+            className="px-5 py-2 mr-3 rounded-full w-[240px]"
             onChange={searchInputHandler}
             type="text"
             value={inputValue}
-            placeholder="Search"
+            placeholder="Enter a city name"
           />
           <div
             onClick={searchWeather}
@@ -79,12 +84,11 @@ function Weather() {
             <img className="w-4 h-4" src={searchIcon} alt="search icon" />
           </div>
         </div>
-        {/* {data && ( */}
         <div>
           <div className="flex justify-center my-5">
             <img
               className="w-32 h-32"
-              src={allIcons[weatherData.icon]}
+              src={allIcons[weatherData.icon] || cloud_icon}
               alt="weatherImage"
             />
           </div>
@@ -119,7 +123,6 @@ function Weather() {
             </div>
           </div>
         </div>
-        {/* )} */}
       </div>
     </>
   );
