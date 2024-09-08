@@ -71,7 +71,7 @@ function Weather() {
       <div className="flex flex-col p-10 shadow-xl bg-gradient-to-t from-blue-600 to-sky-500 rounded-xl">
         <div className="flex ">
           <input
-            className="px-5 py-2 mr-3 rounded-full w-[240px]"
+            className="px-5 py-2 mr-3 rounded-full w-[180px] sm:w-[240px]"
             onChange={searchInputHandler}
             type="text"
             value={inputValue}
