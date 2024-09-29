@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      <div className="flex items-center justify-center w-full h-screen bg-gradient-to-b from-purple-200 to-purple-300">
+      <div className="flex items-center justify-center w-full h-screen bg-gradient-to-b from-purple-50 to-purple-200">
       <Weather />
       </div>
     </>
