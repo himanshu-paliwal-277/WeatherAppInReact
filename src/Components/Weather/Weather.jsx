@@ -1,13 +1,13 @@
-import searchIcon from "../../assets/search.png";
-import humidityImage from "../../assets/humidity.png";
-import windImage from "../../assets/wind.png";
+import searchIcon from "../../assets/Images/search.png";
+import humidityImage from "../../assets/Images/humidity.png";
+import windImage from "../../assets/Images/wind.png";
 import { useEffect, useState } from "react";
 import FetchWeatherData from "../../Services/FetchWeatherData.js";
-import clear_icon from "../../assets/clear.png";
-import cloud_icon from "../../assets/cloud.png";
-import drizzle_icon from "../../assets/drizzle.png";
-import rain_icon from "../../assets/rain.png";
-import snow_icon from "../../assets/snow.png";
+import clear_icon from "../../assets/Images/clear.png";
+import cloud_icon from "../../assets/Images/cloud.png";
+import drizzle_icon from "../../assets/Images/drizzle.png";
+import rain_icon from "../../assets/Images/rain.png";
+import snow_icon from "../../assets/Images/snow.png";
 
 function Weather() {
   const [inputValue, setInputValue] = useState("");
